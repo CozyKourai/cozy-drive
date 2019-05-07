@@ -22,7 +22,6 @@ pipeline {
         sh '''
           virtualenv .venv
           . .venv/bin/activate
-          nvm install 8
         '''
       }
     }
@@ -31,7 +30,10 @@ pipeline {
       steps {
         sh '''
           . .venv/bin/activate
-
+          google-chrome --version
+          node --version
+          npm --version
+          yarn --version
         '''
       }
     }
