@@ -22,6 +22,7 @@ pipeline {
         sh '''
           virtualenv .venv
           . .venv/bin/activate
+          yarn
         '''
       }
     }
@@ -34,16 +35,6 @@ pipeline {
           node --version
           npm --version
           yarn --version
-        '''
-      }
-    }
-
-    stage ('Build drive') {
-      steps {
-        sh '''
-          . .venv/bin/activate
-          yarn
-          yarn build:$COZY_APP_SLUG:browser
         '''
       }
     }
