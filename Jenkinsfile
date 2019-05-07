@@ -7,7 +7,7 @@ pipeline {
   environment {
     INSTANCE_TESTCAFE="kourai2.cozy.rocks"
     TESTCAFE_USER_PASSWORD="c0zyc0zy!"
- }
+  }
 
   stages {
 
@@ -18,20 +18,11 @@ pipeline {
     }
 
     stage ('Setup test environment') {
-          steps {
-            sh '''
-              virtualenv .venv
-              . .venv/bin/activate
-              google-chrome --version
-            '''
-          }
-        }
-
-
-    stage ('testcafe:drive') {
       steps {
         sh '''
+          virtualenv .venv
           . .venv/bin/activate
+
           npm install testcafe
           npm install fs-extra
           npm install unzipper
@@ -39,12 +30,42 @@ pipeline {
           npm install colors
           npm install chrome-remote-interface
           npm install git+https://github.com/cozy/VisualReview-node-client.git#v0.0.4
-
-          yarn testcafe:drive
         '''
       }
     }
 
-  }
+    stage ('Check versions') {
+      steps {
+        sh '''
+          . .venv/bin/activate
+          google-chrome --version
+        '''
+      }
+    }
 
+    stage ('Testcafé') {
+      parallel {
+        stage('Testcafé Drive') {
+          steps {
+            sh '''
+              . .venv/bin/activate
+              export COZY_APP_SLUG='drive'
+
+              yarn testcafe:$COZY_APP_SLUG
+            '''
+          }
+        }
+        stage('Testcafé Photos') {
+          steps {
+            sh '''
+              . .venv/bin/activate
+              export COZY_APP_SLUG='photos'
+
+              yarn testcafe:$COZY_APP_SLUG
+            '''
+          }
+        }
+      }
+    }
+  }
 }
