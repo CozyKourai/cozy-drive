@@ -22,14 +22,7 @@ pipeline {
         sh '''
           virtualenv .venv
           . .venv/bin/activate
-
-          npm install testcafe
-          npm install fs-extra
-          npm install unzipper
-          npm install request
-          npm install colors
-          npm install chrome-remote-interface
-          npm install git+https://github.com/cozy/VisualReview-node-client.git#v0.0.4
+          nvm install 8
         '''
       }
     }
@@ -38,9 +31,7 @@ pipeline {
       steps {
         sh '''
           . .venv/bin/activate
-          google-chrome --version
-          node -v
-          npm -v
+
         '''
       }
     }
