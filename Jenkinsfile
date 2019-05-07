@@ -47,8 +47,7 @@ pipeline {
       steps {
         sh '''
           . .venv/bin/activate
-          export COZY_APP_SLUG='drive'
-          echo 'build'
+          yarn
           yarn build:$COZY_APP_SLUG:browser
         '''
       }
