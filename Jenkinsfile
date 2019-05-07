@@ -39,6 +39,8 @@ pipeline {
         sh '''
           . .venv/bin/activate
           google-chrome --version
+          node -v
+          npm -v
         '''
       }
     }
