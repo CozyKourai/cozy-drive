@@ -27,12 +27,12 @@ pipeline {
           npm install unzipper
           npm install request
           npm install colors
+          npm install lodash/random
           npm install chrome-remote-interface
           npm install git+https://github.com/cozy/VisualReview-node-client.git#v0.0.4
         '''
       }
     }
-
 
     stage ('Check versions') {
       steps {
