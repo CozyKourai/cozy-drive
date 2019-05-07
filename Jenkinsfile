@@ -43,6 +43,17 @@ pipeline {
       }
     }
 
+    stage ('Build drive') {
+      steps {
+        sh '''
+          . .venv/bin/activate
+          export COZY_APP_SLUG='drive'
+          echo 'build'
+          yarn build:$COZY_APP_SLUG:browser
+        '''
+      }
+    }
+
     stage ('Testcafé') {
       parallel {
         stage('Testcafé Drive') {
@@ -50,7 +61,6 @@ pipeline {
             sh '''
               . .venv/bin/activate
               export COZY_APP_SLUG='drive'
-
               yarn testcafe:$COZY_APP_SLUG
             '''
           }
