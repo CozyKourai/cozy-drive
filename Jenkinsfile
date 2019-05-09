@@ -35,6 +35,7 @@ pipeline {
           node --version
           npm --version
           yarn --version
+          echo $INSTANCE_TESTCAFE
         '''
       }
     }
