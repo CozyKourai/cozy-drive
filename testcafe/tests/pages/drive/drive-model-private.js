@@ -117,7 +117,7 @@ export default class privateDrivePage extends DrivePage {
 
     console.log(`Uploading ${numOfFiles} file(s)`)
 
-    await isExistingAndVisibile(selectors.btnUpload, 'Upload Button')
+    //  await isExistingAndVisibile(selectors.btnUpload, 'Upload Button')
     await t.setFilesToUpload(selectors.btnUpload, files)
 
     await isExistingAndVisibile(selectors.divUpload, 'Upload pop-in')
