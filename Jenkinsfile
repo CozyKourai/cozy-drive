@@ -36,6 +36,7 @@ pipeline {
           npm --version
           yarn --version
           echo $INSTANCE_TESTCAFE
+          echo $CHANGE_ID
         '''
       }
     }
