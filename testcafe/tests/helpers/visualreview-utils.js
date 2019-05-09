@@ -58,9 +58,27 @@ export class VisualReviewTestcafe extends VisualReview {
     this.options.properties.os = await getNavigatorOs()
     this.options.properties.browser = await getNavigatorName()
     this.options.properties.resolution = await getResolution()
-
-    //the path needs to be in const but i need to define the screenshots tree 1st
-    await this.uploadScreenshot(`./reports/${screenshotsPath}.png`)
+    //VisualReview doesn't handle timeout, so lets add a timeout here to avoid breaking the CI
+    Promise.race([
+      this.uploadScreenshot(`./reports/${screenshotsPath}.png`),
+      new Promise(function(resolve, reject) {
+        setTimeout(
+          () =>
+            reject(
+              new Error(`❌ VisualReview - "${screenshotsPath}.png" timeout`)
+            ),
+          10000
+        )
+      })
+    ]).then(
+      function() {
+        console.log(`➡️ "${screenshotsPath}.png" uploaded`)
+      },
+      function(error) {
+        //log error instead of throwing error so tests don't crash if VR server is taking too long
+        console.error(error.message)
+      }
+    )
   }
 
   async takeElementScreenshotAndUpload(
@@ -79,8 +97,27 @@ export class VisualReviewTestcafe extends VisualReview {
     this.options.properties.browser = await getNavigatorName()
     this.options.properties.resolution = await getResolution()
 
-    //the path needs to be in const but i need to define the screenshots tree 1st
-    await this.uploadScreenshot(`./reports/${screenshotsPath}.png`)
+    //VisualReview doesn't handle timeout, so lets add a timeout here to avoid breaking the CI
+    Promise.race([
+      this.uploadScreenshot(`./reports/${screenshotsPath}.png`),
+      new Promise(function(resolve, reject) {
+        setTimeout(
+          () =>
+            reject(
+              new Error(`❌ VisualReview - "${screenshotsPath}.png" timeout`)
+            ),
+          10000
+        )
+      })
+    ]).then(
+      function() {
+        console.log(`➡️ "${screenshotsPath}.png" uploaded`)
+      },
+      function(error) {
+        //log error instead of throwing error so tests don't crash if VR server is taking too long
+        console.error(error.message)
+      }
+    )
   }
 
   async checkRunStatus() {
