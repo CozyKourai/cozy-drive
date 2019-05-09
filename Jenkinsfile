@@ -36,12 +36,7 @@ pipeline {
           npm --version
           yarn --version
           echo $INSTANCE_TESTCAFE
-          echo $CHANGE_ID
-
-          echo $BUILD_URL
-          echo "Jenkins workspace: ${WORKSPACE}"
-          echo "Job directory: ${WORKSPACE}/../../jobs/${JOB_NAME}"
-          echo "Build data: ${WORKSPACE}/../../jobs/${JOB_NAME}/builds/${BUILD_ID}"
+          lscpu
         '''
       }
     }
