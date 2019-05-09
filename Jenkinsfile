@@ -1,7 +1,7 @@
 pipeline {
 
   agent {
-    label 'ci-slave-01'
+    label 'ci-slave-02'
   }
 
   environment {
