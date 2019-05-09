@@ -8,7 +8,6 @@ pipeline {
     INSTANCE_TESTCAFE="kouraicozy1156.cozy.rocks"
     TESTCAFE_USER_PASSWORD="c0zyc0zy!"
   }
-
   stages {
 
     stage ('Get latest code') {
@@ -22,14 +21,7 @@ pipeline {
         sh '''
           virtualenv .venv
           . .venv/bin/activate
-          npm install testcafe
-          npm install fs-extra
-          npm install unzipper
-          npm install request
-          npm install colors
-          npm install lodash/random
-          npm install chrome-remote-interface
-          npm install git+https://github.com/cozy/VisualReview-node-client.git#v0.0.4
+          yarn
         '''
       }
     }
@@ -42,6 +34,7 @@ pipeline {
           node --version
           npm --version
           yarn --version
+          echo $INSTANCE_TESTCAFE
         '''
       }
     }
