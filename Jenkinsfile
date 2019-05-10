@@ -41,8 +41,7 @@ pipeline {
       }
     }
 
-    stage ('Testcafé') {
-      parallel {
+
         stage('Testcafé Photos') {
           steps {
             sh '''
@@ -63,7 +62,6 @@ pipeline {
           }
         }
 
-      }
+
     }
-  }
 }
