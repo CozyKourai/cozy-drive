@@ -28,7 +28,7 @@ async function runRunner() {
       'testcafe/tests/photos/photos_end_delete_all_data.js'
     ])
     //emulation:cdpPort=9222 is used to set the download folder in headless mode
-    .browsers(['chrome:headless:emulation:cdpPort=9222 --start-maximized'])
+    .browsers(['chrome:headless:emulation:cdpPort=9221 --start-maximized'])
 
     .screenshots(
       'reports/',
@@ -36,9 +36,9 @@ async function runRunner() {
       '${DATE}_${TIME}/${FIXTURE}/${TEST_ID}-${TEST}/${FILE_INDEX}.png'
     )
     .run({
-      assertionTimeout: 8000, //Testcafe Default value: 3000
+      assertionTimeout: 6000, //Testcafe Default value: 3000
       pageLoadTimeout: 6000, //Testcafe Default value: 3000
-      selectorTimeout: 15000, //Testcafe Default value: 10000
+      //    selectorTimeout: 15000, //Testcafe Default value: 10000
       skipJsErrors: true,
       skipUncaughtErrors: true
     })
