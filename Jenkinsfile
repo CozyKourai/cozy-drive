@@ -5,7 +5,6 @@ pipeline {
   }
 
   environment {
-    INSTANCE_TESTCAFE="kouraicozy1180.cozy.rocks"
     TESTCAFE_USER_PASSWORD="c0zyc0zy!"
   }
 
@@ -41,13 +40,14 @@ pipeline {
         }
       }
 
-      stage ('Testcafé') {
-        parallel {
+
           stage('Testcafé Drive') {
             steps {
               sh '''
                 . .venv/bin/activate
+                export INSTANCE_TESTCAFE="testdrive.cozy.rocks"
                 export COZY_APP_SLUG='drive'
+                
                 yarn testcafe:$COZY_APP_SLUG
               '''
             }
@@ -56,13 +56,12 @@ pipeline {
             steps {
               sh '''
                 . .venv/bin/activate
+                export INSTANCE_TESTCAFE="testphotos.cozy.rocks"
                 export COZY_APP_SLUG='photos'
 
                 yarn testcafe:$COZY_APP_SLUG
               '''
             }
           }
-        }
-      }
     }
   }
