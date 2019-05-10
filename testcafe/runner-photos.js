@@ -27,7 +27,8 @@ async function runRunner() {
       //Scenario that just delete photos, so we don't need to do it in every test.
       'testcafe/tests/photos/photos_end_delete_all_data.js'
     ])
-    .browsers(['chrome:headless:emulation --start-maximized'])
+    //emulation:cdpPort=9222 is used to set the download folder in headless mode
+    .browsers(['chrome:headless:emulation:cdpPort=9221 --start-maximized'])
 
     .screenshots(
       'reports/',
