@@ -15,7 +15,7 @@ async function runRunner() {
       //'testcafe/tests/drive/viewer-feature.js'
     ])
     //emulation:cdpPort=9222 is used to set the download folder in headless mode
-    .browsers(['chrome:headless:emulation:cdpPort=9222 --start-maximized'])
+    .browsers(['chrome:headless:emulation:cdpPort=9220 --start-maximized'])
 
     .screenshots(
       'reports/',

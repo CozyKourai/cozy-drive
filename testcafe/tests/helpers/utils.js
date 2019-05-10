@@ -82,7 +82,17 @@ export async function deleteLocalFile(filepath) {
 //Chrome:headless does not download file in the download Folder by default
 //This function set the path for the download folder
 export async function setDownloadPath(downloadFolderPath) {
-  const client = await CDP()
+  let port
+  if (SLUG == 'drive') port = 9220
+  if (SLUG == 'photos') port = 9221
+
+  console.info('CDP PORT : ' + port)
+
+  const options = {
+    port: port
+  }
+
+  const client = await CDP(options)
   const { Network, Page } = client
 
   await Promise.all([Network.enable(), Page.enable()])

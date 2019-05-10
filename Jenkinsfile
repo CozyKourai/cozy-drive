@@ -41,8 +41,16 @@ pipeline {
         }
       }
 
-      stage ('Testcafé') {
-        parallel {
+
+          stage('Testcafé Drive') {
+            steps {
+              sh '''
+                . .venv/bin/activate
+                export COZY_APP_SLUG='drive'
+                yarn testcafe:$COZY_APP_SLUG
+              '''
+            }
+          }
           stage('Testcafé Photos') {
             steps {
               sh '''
@@ -53,17 +61,5 @@ pipeline {
               '''
             }
           }
-          stage('Testcafé Drive') {
-            steps {
-              sh '''
-                . .venv/bin/activate
-                export COZY_APP_SLUG='drive'
-                yarn testcafe:$COZY_APP_SLUG
-              '''
-            }
-          }
-
-        }
-      }
     }
   }
