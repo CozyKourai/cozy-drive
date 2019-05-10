@@ -20,14 +20,14 @@ async function runRunner() {
       'testcafe/tests/helpers/init-data.js',
       //Tests !
       //'testcafe/tests/drive/classification_scenario.js',
-      'testcafe/tests/drive/navigation.js',
+      //  'testcafe/tests/drive/navigation.js',
       'testcafe/tests/drive/folder_sharing_scenario.js',
-      'testcafe/tests/drive/file_sharing_scenario.js',
-      'testcafe/tests/drive/viewer-feature.js',
-      'testcafe/tests/drive/public-viewer-feature.js'
+      'testcafe/tests/drive/file_sharing_scenario.js'
+      //'testcafe/tests/drive/viewer-feature.js',
+      //'testcafe/tests/drive/public-viewer-feature.js'
     ])
     //emulation:cdpPort=9222 is used to set the download folder in headless mode
-    .browsers(['chrome:headless:emulation:cdpPort=9222 --start-maximized'])
+    .browsers(['chrome:headless:emulation:cdpPort=9220 --start-maximized'])
 
     .screenshots(
       'reports/',

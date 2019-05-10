@@ -19,16 +19,16 @@ async function runRunner() {
       //Scenario that just upload photos, so we don't need to do it in every test.
       'testcafe/tests/photos/photos_start_upload_photos.js',
 
-      'testcafe/tests/photos/photos_crud.js',
-      'testcafe/tests/photos/create_full_album_scenario.js',
-      'testcafe/tests/photos/create_empty_album_scenario.js',
+      //  'testcafe/tests/photos/photos_crud.js',
+      //  'testcafe/tests/photos/create_full_album_scenario.js',
+      //'testcafe/tests/photos/create_empty_album_scenario.js',
       'testcafe/tests/photos/album_sharing_scenario.js',
 
       //Scenario that just delete photos, so we don't need to do it in every test.
       'testcafe/tests/photos/photos_end_delete_all_data.js'
     ])
     //emulation:cdpPort=9222 is used to set the download folder in headless mode
-    .browsers(['chrome:headless:emulation:cdpPort=9222 --start-maximized'])
+    .browsers(['chrome:headless:emulation:cdpPort=9221 --start-maximized'])
 
     .screenshots(
       'reports/',
