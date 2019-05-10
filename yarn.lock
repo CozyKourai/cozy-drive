@@ -880,6 +880,13 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@babel/runtime@^7.0.0":
+  version "7.4.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.4.tgz#dc2e34982eb236803aa27a07fea6857af1b9171d"
+  integrity sha512-w0+uT71b6Yi7i5SE0co4NioIpSYS6lLiXvCzWzGSKvpK5vdQtCbICHMj+gbAKAOtxiV6HsVh/MBdaF9EQ6faSg==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/runtime@^7.3.1":
   version "7.4.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.2.tgz#f5ab6897320f16decd855eed70b705908a313fe8"
@@ -4486,10 +4493,10 @@ cozy-device-helper@1.7.1:
   dependencies:
     lodash "4.17.11"
 
-cozy-doctypes@1.43.0:
-  version "1.43.0"
-  resolved "https://registry.yarnpkg.com/cozy-doctypes/-/cozy-doctypes-1.43.0.tgz#8ea622c86c7e16cf9aa2e2110daa51fe6b257d19"
-  integrity sha512-ue/fJAEuDvAWIF99Upp9UlbcL1Od9EX+9uGHgAQRtu+xKXJsdBUnJbwgUqYTAh9uLcubKM+nFTXHmQeoyB1jhQ==
+cozy-doctypes@1.44.1:
+  version "1.44.1"
+  resolved "https://registry.yarnpkg.com/cozy-doctypes/-/cozy-doctypes-1.44.1.tgz#9e411fa89a90fbb8141a44d772f2d57cd2eed59e"
+  integrity sha512-2tLkB6L70pQAh7AcM0gfmVEejtEUWtG7snpNeqmc3ntatKWKvygeBke9n4JrJ6ZqCIY9XUw/uQ+10J+MCYmkZQ==
   dependencies:
     "@babel/runtime" "7.3.1"
     cozy-logger "1.3.1"
@@ -4616,10 +4623,10 @@ cozy-stack-client@^6.20.0:
     mime-types "2.1.20"
     qs "6.6.0"
 
-cozy-ui@19.25.1:
-  version "19.25.1"
-  resolved "https://registry.yarnpkg.com/cozy-ui/-/cozy-ui-19.25.1.tgz#5c755fa0e31d899ed8511e36f33095b8a01c7e31"
-  integrity sha512-XHghvkLOhzlZnTj1IHRvfkKxnQVwD40sPWnV9mzcJSDDl1Q5FhfnJH3dIhwFIVpe3PcXr4DliRAOeAuVoTkzsw==
+cozy-ui@19.28.0:
+  version "19.28.0"
+  resolved "https://registry.yarnpkg.com/cozy-ui/-/cozy-ui-19.28.0.tgz#4976638b0a11d83d200fb58deac423b587238580"
+  integrity sha512-WjcxuBw4F3m5X+ThlLtSvjNTxP+KiXXeQBCD6O12vjDb8ST8uHWe+mrns3Xd8JDuNu8Bm+6pBzoUO43tYn0erg==
   dependencies:
     "@babel/runtime" "^7.3.4"
     body-scroll-lock "^2.5.8"
@@ -4631,10 +4638,10 @@ cozy-ui@19.25.1:
     react-hot-loader "^4.3.11"
     react-select "2.2.0"
 
-cozy-ui@19.28.0:
-  version "19.28.0"
-  resolved "https://registry.yarnpkg.com/cozy-ui/-/cozy-ui-19.28.0.tgz#4976638b0a11d83d200fb58deac423b587238580"
-  integrity sha512-WjcxuBw4F3m5X+ThlLtSvjNTxP+KiXXeQBCD6O12vjDb8ST8uHWe+mrns3Xd8JDuNu8Bm+6pBzoUO43tYn0erg==
+cozy-ui@19.30.1:
+  version "19.30.1"
+  resolved "https://registry.yarnpkg.com/cozy-ui/-/cozy-ui-19.30.1.tgz#8ab9a270847e025a3fb500ada43f195fcefeb448"
+  integrity sha512-UYBeOI0ElkyJjOCvBffKVIrKnhQlrawxauAv86fPngxr4PcvIBtNVXO/vYL18k5U8mrVoF/LswAVW/YLnXCrHQ==
   dependencies:
     "@babel/runtime" "^7.3.4"
     body-scroll-lock "^2.5.8"
@@ -9896,6 +9903,18 @@ lodash@^3.3.1, lodash@^3.5.0:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
   integrity sha1-W/Rejkm6QYnhfUgnid/RW9FAt7Y=
 
+log-prefix@0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/log-prefix/-/log-prefix-0.1.1.tgz#3ec492138c8044c9f9732298492dca87850cac90"
+  integrity sha512-aP1Lst8OCdZKATqzXDN0JBissNVZuiKLyo6hOXDBxaQ1jHDsaxh2J1i5Pp0zMy6ayTKDWfUlLMXyLaQe1PJ48g==
+
+log-timestamp@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/log-timestamp/-/log-timestamp-0.3.0.tgz#2e10f1f0db872674ef3ecf53d6a312840acae45f"
+  integrity sha512-luRz6soxijd1aJh0GkLXFjKABihxthvTfWTzu3XhCgg5EivG2bsTpSd63QFbUgS+/KmFtL+0RfSpeaD2QvOV8Q==
+  dependencies:
+    log-prefix "0.1.1"
+
 log-update-async-hook@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/log-update-async-hook/-/log-update-async-hook-2.0.2.tgz#6eba89dbe67fa12d0b20ac47df7942947af1fcd1"
@@ -9996,6 +10015,11 @@ make-dir@^2.0.0:
   dependencies:
     pify "^4.0.1"
     semver "^5.6.0"
+
+make-event-props@^1.1.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/make-event-props/-/make-event-props-1.2.0.tgz#96b87d88919533b8f8934b58b4c3d5679459a0cf"
+  integrity sha512-BmWFkm/jZzVH9A0tEBdkjAARUz/eha+5IRyfOndeSMKRadkgR5DawoBHoRwLxkYmjJOI5bHkXKpaZocxj+dKgg==
 
 make-fetch-happen@^4.0.1:
   version "4.0.1"
@@ -10152,9 +10176,9 @@ memorystream@^0.3.1:
   integrity sha1-htcJCzDORV1j+64S3aUaR93K+bI=
 
 merge-class-names@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/merge-class-names/-/merge-class-names-1.1.1.tgz#3bd2f38eb5418c464a0fef615484fdf6c8932256"
-  integrity sha512-+UUWBUoFw9QLY/UlBKU/xk9h6OhyG3BUDDuF2eIJcxmusWb/uedvNpZGkysqMw5b/ds+wkX7NJTDSdUuRsCNyA==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/merge-class-names/-/merge-class-names-1.2.0.tgz#cb30ecfc3bdbd96b6f76d0a98777907e5fbb3462"
+  integrity sha512-ifHxhC8DojHT1rG3PHCaJYInUqPd0WO+PxsaYDMkgy7RzfyOFtnlpr/hbhki+m/3R/ujIRVnZkD/AHjgjb5uhg==
 
 merge-descriptors@1.0.1:
   version "1.0.1"
@@ -11906,13 +11930,13 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-pdfjs-dist@2.0.305:
-  version "2.0.305"
-  resolved "https://registry.yarnpkg.com/pdfjs-dist/-/pdfjs-dist-2.0.305.tgz#53b0f9805ae101d7ef742d020d03578ee9781b06"
-  integrity sha1-U7D5gFrhAdfvdC0CDQNXjul4GwY=
+pdfjs-dist@2.1.266:
+  version "2.1.266"
+  resolved "https://registry.yarnpkg.com/pdfjs-dist/-/pdfjs-dist-2.1.266.tgz#cded02268b389559e807f410d2a729db62160026"
+  integrity sha512-Jy7o1wE3NezPxozexSbq4ltuLT0Z21ew/qrEiAEeUZzHxMHGk4DUV1D7RuCXg5vJDvHmjX1YssN+we9QfRRgXQ==
   dependencies:
     node-ensure "^0.0.0"
-    worker-loader "^1.1.0"
+    worker-loader "^2.0.0"
 
 pdfjs@2.1.0:
   version "2.1.0"
@@ -13180,16 +13204,17 @@ react-measure@2.2.4:
     prop-types "^15.6.2"
     resize-observer-polyfill "^1.5.0"
 
-react-pdf@3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/react-pdf/-/react-pdf-3.0.6.tgz#399631e05f7057795d273d2b4809b808625b10e0"
-  integrity sha512-xdko6TTQvEfsKawJkXkp/AA6MCsnYpWHKD5JoaKbngjAsPWAw1LH+f5ImBd6yyF02nX58srwFW2Ikw7mRFubJA==
+react-pdf@4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/react-pdf/-/react-pdf-4.0.5.tgz#4f5584005a504cb7941b01670b40355f4706b726"
+  integrity sha512-hoIL08qU5pU1fNEx6NnLl3omD08LAUc+UkmxGXEql/PXiNWjMZHWlu8MSVg9pwSTN6dXtfky0gehrisWvSOrCg==
   dependencies:
-    babel-runtime "^6.26.0"
+    "@babel/runtime" "^7.0.0"
     lodash.once "^4.1.1"
+    make-event-props "^1.1.0"
     merge-class-names "^1.1.1"
-    pdfjs-dist "2.0.305"
-    prop-types "^15.6.1"
+    pdfjs-dist "2.1.266"
+    prop-types "^15.6.2"
 
 react-redux@5.0.7:
   version "5.0.7"
@@ -17099,10 +17124,10 @@ worker-farm@^1.5.2:
   dependencies:
     errno "~0.1.7"
 
-worker-loader@^1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/worker-loader/-/worker-loader-1.1.1.tgz#920d74ddac6816fc635392653ed8b4af1929fd92"
-  integrity sha512-qJZLVS/jMCBITDzPo/RuweYSIG8VJP5P67mP/71alGyTZRe1LYJFdwLjLalY3T5ifx0bMDRD3OB6P2p1escvlg==
+worker-loader@2.0.0, worker-loader@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/worker-loader/-/worker-loader-2.0.0.tgz#45fda3ef76aca815771a89107399ee4119b430ac"
+  integrity sha512-tnvNp4K3KQOpfRnD20m8xltE3eWh89Ye+5oj7wXEEHKac1P4oZ6p9oTj8/8ExqoSBnk9nu5Pr4nKfQ1hn2APJw==
   dependencies:
     loader-utils "^1.0.0"
     schema-utils "^0.4.0"

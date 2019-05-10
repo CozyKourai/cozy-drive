@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Document, Page } from 'react-pdf/dist/entry.webpack'
+import { Document, Page, pdfjs } from 'react-pdf'
+import createWorker from 'react-pdf/dist/pdf.worker.entry.js'
 import cx from 'classnames'
 import throttle from 'lodash/throttle'
 import { Spinner } from 'cozy-ui/react'
@@ -8,6 +9,8 @@ import withFileUrl from './withFileUrl'
 import ToolbarButton from './PdfToolbarButton'
 import NoViewer from './NoViewer'
 import styles from './styles.styl'
+
+pdfjs.GlobalWorkerOptions.workerPort = createWorker()
 
 export const MIN_SCALE = 0.25
 export const MAX_SCALE = 3
@@ -110,7 +113,6 @@ export class PdfJsViewer extends Component {
     } = this.state
 
     if (errored) return <NoViewer file={file} />
-    const pageWidth = width ? width * scale : null // newer versions of react-pdf do that automatically
 
     return (
       <div
@@ -130,7 +132,8 @@ export class PdfJsViewer extends Component {
               <Page
                 key={page}
                 pageNumber={page + 1}
-                width={pageWidth}
+                width={width}
+                scale={scale}
                 renderAnnotations={false}
                 className={cx('u-mv-1', styles['pho-viewer-pdfviewer-page'])}
               />
@@ -138,7 +141,8 @@ export class PdfJsViewer extends Component {
           ) : (
             <Page
               pageNumber={currentPage}
-              width={pageWidth}
+              width={width}
+              scale={scale}
               renderAnnotations={false}
               className={styles['pho-viewer-pdfviewer-page']}
             />

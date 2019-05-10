@@ -17,11 +17,12 @@
     "^react-cozy-helpers(.*)": "<rootDir>/src/lib/react-cozy-helpers$1",
     "^components(.*)": "<rootDir>/src/components$1",
     "^folder-references(.*)": "<rootDir>/src/folder-references$1",
-    "react-pdf/dist/entry.webpack": "react-pdf"
+    "react-pdf/dist/pdf.worker.entry.js": "<rootDir>/jestHelpers/mocks/pdfjsWorkerMock.js"
   },
   "snapshotSerializers": ["enzyme-to-json/serializer"],
   "transform": {
-    "^.+\\.(js|jsx)?$": "<rootDir>/test/jestLib/babel-transformer.js"
+    "^.+\\.(js|jsx)?$": "<rootDir>/test/jestLib/babel-transformer.js",
+    "^.+\\.webapp$": "<rootDir>/test/jestLib/json-transformer.js"
   },
   "transformIgnorePatterns": ["node_modules/(?!cozy-ui)/"],
   "testMatch": ["**/(*.)(spec|test).js?(x)"],
