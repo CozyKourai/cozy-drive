@@ -45,7 +45,7 @@ pipeline {
             steps {
               sh '''
                 . .venv/bin/activate
-                export INSTANCE_TESTCAFE="testdrive.cozy.rocks"
+                export INSTANCE_TESTCAFE="testdrive.cozy.works"
                 export COZY_APP_SLUG='drive'
 
                 yarn testcafe:$COZY_APP_SLUG
@@ -56,7 +56,7 @@ pipeline {
             steps {
               sh '''
                 . .venv/bin/activate
-                export INSTANCE_TESTCAFE="testphotos.cozy.rocks"
+                export INSTANCE_TESTCAFE="testphotos.cozy.works"
                 export COZY_APP_SLUG='photos'
 
                 yarn testcafe:$COZY_APP_SLUG
