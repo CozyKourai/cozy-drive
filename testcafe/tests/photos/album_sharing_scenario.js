@@ -181,8 +181,10 @@ fixture`${FIXTURE_UNSHARE}`.page`${TESTCAFE_PHOTOS_URL}/`.beforeEach(
   }
 )
 
-test(TEST_UNSHARE_ALBUM, async () => {
+test(TEST_UNSHARE_ALBUM, async t => {
   console.group(`↳ ℹ️  ${FEATURE_PREFIX} : ${TEST_UNSHARE_ALBUM}`)
+  await t.maximizeWindow() //Back to desktop
+
   await timelinePage.goToAlbums()
   await photoAlbumsPage.goToAlbum(FEATURE_PREFIX)
   await photoAlbumPage.unshareAlbumPublicLink()
