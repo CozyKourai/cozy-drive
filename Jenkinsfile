@@ -8,62 +8,67 @@ pipeline {
     TESTCAFE_USER_PASSWORD="c0zyc0zy!"
   }
 
-    stages {
+  stages {
 
-      stage ('Get latest code') {
-        steps {
-          checkout scm
-        }
+    stage ('Get latest code') {
+      steps {
+        echo "--- SECTION Get_code ---"
+        // Clean workspace before doing anything
+        cleanWs()
+        checkout scm
+        echo "--- END SECTION ---"
       }
-
-      stage ('Setup test environment') {
-        steps {
-          sh '''
-            virtualenv .venv
-            . .venv/bin/activate
-            yarn
-          '''
-        }
-      }
-
-      stage ('Check versions') {
-        steps {
-          sh '''
-            . .venv/bin/activate
-            google-chrome --version
-            node --version
-            npm --version
-            yarn --version
-            echo $INSTANCE_TESTCAFE
-            lscpu
-          '''
-        }
-      }
-
-
-          stage('Testcafé Drive') {
-            steps {
-              sh '''
-                . .venv/bin/activate
-                export INSTANCE_TESTCAFE="testdrive.cozy.works"
-                export COZY_APP_SLUG='drive'
-
-                yarn testcafe:$COZY_APP_SLUG
-              '''
-            }
-          }
-          stage('Testcafé Photos') {
-            steps {
-              sh '''
-                . .venv/bin/activate
-                export INSTANCE_TESTCAFE="testphotos.cozy.works"
-                export COZY_APP_SLUG='photos'
-
-                yarn testcafe:$COZY_APP_SLUG
-              '''
-            }
-          }
-
-
     }
+
+    stage ('Setup test environment') {
+      steps {
+        sh '''
+          echo "--- SECTION Setup_env ---"
+          yarn
+          echo "--- END SECTION ---"
+        '''
+      }
+    }
+
+    stage ('Check versions') {
+      steps {
+        sh '''
+          echo "--- SECTION Versions ---"
+          google-chrome --version
+          node --version
+          npm --version
+          yarn --version
+          lscpu
+          echo "--- END SECTION ---"
+        '''
+      }
+    }
+    stage('Testcafé Photos') {
+      steps {
+        sh '''
+          echo "--- SECTION Test Photos ---"
+          export INSTANCE_TESTCAFE="testphotos.cozy.works"
+          export COZY_APP_SLUG='photos'
+          yarn testcafe:$COZY_APP_SLUG
+          echo "--- END SECTION ---"
+        '''
+      }
+    }
+
+    
+    stage('Testcafé Drive') {
+      steps {
+        sh '''
+          echo "--- SECTION Test Drive ---"
+          export INSTANCE_TESTCAFE="testdrive.cozy.works"
+          export COZY_APP_SLUG='drive'
+          yarn testcafe:$COZY_APP_SLUG
+          echo "--- END SECTION ---"
+        '''
+      }
+    }
+
+
+
   }
+}
