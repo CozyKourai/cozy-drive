@@ -73,7 +73,7 @@ fixture`Drive : Access a file public link, download the file, and check the 'cre
     console.groupEnd()
   })
   .afterEach(async () => {
-    //await checkLocalFile(`${data.DOWNLOAD_PATH}/${data.FILE_XLSX}`) //The file is downloaded directly, no zip!
+    //  await checkLocalFile(`${data.DOWNLOAD_PATH}/${data.FILE_XLSX}`) //The file is downloaded directly, no zip!
     //await deleteLocalFile(`${data.DOWNLOAD_PATH}/${data.FILE_XLSX}`)
   })
 test(`[Desktop] Drive : Access a file public link, download the file, and check the 'create Cozy' link`, async t => {

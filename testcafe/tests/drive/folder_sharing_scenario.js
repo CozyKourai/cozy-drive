@@ -70,7 +70,7 @@ fixture`Drive : Access a folder public link, download the file(s), and check the
     console.groupEnd()
   })
   .afterEach(async () => {
-    //await checkLocalFile(data.DOWNLOAD_FOLDER_PATH)
+    //  await checkLocalFile(data.DOWNLOAD_FOLDER_PATH)
     //await deleteLocalFile(data.DOWNLOAD_FOLDER_PATH)
   })
 test(`[Desktop] Drive : Access a folder public link, download the file(s), and check the 'create Cozy' link`, async t => {

@@ -88,7 +88,7 @@ test('Viewer : checking common features for all files (expect PDF)', async t => 
         t.ctx.fileNameListNoPDF[i]
       }`
     )
-    //await checkLocalFile(`${data.DOWNLOAD_PATH}/${t.ctx.fileNameListNoPDF[i]}`)
+    await checkLocalFile(`${data.DOWNLOAD_PATH}/${t.ctx.fileNameListNoPDF[i]}`)
     //await deleteLocalFile(`${data.DOWNLOAD_PATH}/${t.ctx.fileNameListNoPDF[i]}`)
   }
 })
@@ -120,12 +120,12 @@ test('Viewer : no Viewer : other Download', async t => {
         t.ctx.fileNameListNoViewer[i]
       }`
     )
-    //await checkLocalFile(
-      `${data.DOWNLOAD_PATH}/${t.ctx.fileNameListNoViewer[i]}`
-    )
+    // await checkLocalFile(
+    //   `${data.DOWNLOAD_PATH}/${t.ctx.fileNameListNoViewer[i]}`
+    // )
     //await deleteLocalFile(
-      `${data.DOWNLOAD_PATH}/${t.ctx.fileNameListNoViewer[i]}`
-    )
+    //   `${data.DOWNLOAD_PATH}/${t.ctx.fileNameListNoViewer[i]}`
+    // )
   }
 })
 

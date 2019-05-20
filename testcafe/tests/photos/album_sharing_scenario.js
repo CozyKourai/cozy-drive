@@ -101,12 +101,12 @@ fixture`${FIXTURE_PUBLIC_WITH_DL}`.page`${TESTCAFE_PHOTOS_URL}/`
     logger.info(
       `↳ ℹ️  ${FEATURE_PREFIX} - Checking downloaded file for ${FEATURE_PREFIX.toLowerCase()}.zip`
     )
-    //await checkLocalFile(
-      `${data.DOWNLOAD_PATH}/${FEATURE_PREFIX.toLowerCase()}.zip`
-    )
+    // await checkLocalFile(
+    //   `${data.DOWNLOAD_PATH}/${FEATURE_PREFIX.toLowerCase()}.zip`
+    // )
     //await deleteLocalFile(
-      `${data.DOWNLOAD_PATH}/${FEATURE_PREFIX.toLowerCase()}.zip`
-    )
+    //   `${data.DOWNLOAD_PATH}/${FEATURE_PREFIX.toLowerCase()}.zip`
+    // )
   })
   .after(async ctx => {
     await ctx.vr.checkRunStatus()
