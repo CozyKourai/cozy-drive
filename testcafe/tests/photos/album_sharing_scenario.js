@@ -91,7 +91,7 @@ fixture`${FIXTURE_PUBLIC_WITH_DL}`.page`${TESTCAFE_PHOTOS_URL}/`
       `\n↳ ℹ️  no Loggin (anonymous) & DOWNLOAD_PATH initialization`
     )
     //await t.useRole(Role.anonymous())
-    await setDownloadPath(data.DOWNLOAD_PATH)
+    //await setDownloadPath(data.DOWNLOAD_PATH)
     await t.navigateTo(data.sharingLink)
     //Init count for navigation
     t.ctx.totalFilesCount = await publicPhotoPage.getPhotosCount('Before')
@@ -101,10 +101,10 @@ fixture`${FIXTURE_PUBLIC_WITH_DL}`.page`${TESTCAFE_PHOTOS_URL}/`
     logger.info(
       `↳ ℹ️  ${FEATURE_PREFIX} - Checking downloaded file for ${FEATURE_PREFIX.toLowerCase()}.zip`
     )
-    await checkLocalFile(
+    //await checkLocalFile(
       `${data.DOWNLOAD_PATH}/${FEATURE_PREFIX.toLowerCase()}.zip`
     )
-    await deleteLocalFile(
+    //await deleteLocalFile(
       `${data.DOWNLOAD_PATH}/${FEATURE_PREFIX.toLowerCase()}.zip`
     )
   })

@@ -118,7 +118,7 @@ fixture`${FIXTURE_PUBLIC_WITH_DL}`.page`${TESTCAFE_DRIVE_URL}/`
     await t.navigateTo(data.sharingLink)
     await publicDrivePage.waitForLoading({ isFull: true })
 
-    await setDownloadPath(data.DOWNLOAD_PATH)
+    //await setDownloadPath(data.DOWNLOAD_PATH)
     //Init count for navigation
     t.ctx.totalFilesCount = await publicDrivePage.getContentRowCount(
       `${FIXTURE_PUBLIC_WITH_DL} Before`
@@ -131,8 +131,8 @@ fixture`${FIXTURE_PUBLIC_WITH_DL}`.page`${TESTCAFE_DRIVE_URL}/`
         t.ctx.fileDownloaded
       }`
     )
-    await checkLocalFile(`${data.DOWNLOAD_PATH}/${t.ctx.fileDownloaded}`)
-    await deleteLocalFile(`${data.DOWNLOAD_PATH}/${t.ctx.fileDownloaded}`)
+    //await checkLocalFile(`${data.DOWNLOAD_PATH}/${t.ctx.fileDownloaded}`)
+    //await deleteLocalFile(`${data.DOWNLOAD_PATH}/${t.ctx.fileDownloaded}`)
   })
   .after(async ctx => {
     await ctx.vr.checkRunStatus()

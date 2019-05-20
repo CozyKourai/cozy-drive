@@ -47,7 +47,7 @@ pipeline {
       steps {
         sh '''
           echo "--- SECTION Test Photos ---"
-          export INSTANCE_TESTCAFE="testphotos.cozy.works"
+          export INSTANCE_TESTCAFE="testphotos.cozy.rocks"
           export COZY_APP_SLUG='photos'
           yarn testcafe:$COZY_APP_SLUG
           echo "--- END SECTION ---"
@@ -55,12 +55,12 @@ pipeline {
       }
     }
 
-    
+
     stage('Testcafé Drive') {
       steps {
         sh '''
           echo "--- SECTION Test Drive ---"
-          export INSTANCE_TESTCAFE="testdrive.cozy.works"
+          export INSTANCE_TESTCAFE="testdrive.cozy.rocks"
           export COZY_APP_SLUG='drive'
           yarn testcafe:$COZY_APP_SLUG
           echo "--- END SECTION ---"

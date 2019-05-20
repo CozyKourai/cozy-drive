@@ -66,12 +66,12 @@ fixture`Drive : Access a folder public link, download the file(s), and check the
       `\n↳ ℹ️  no Loggin (anonymous) & DOWNLOAD_PATH initialization`
     )
     //await t.useRole(Role.anonymous())
-    await setDownloadPath(data.DOWNLOAD_PATH)
+    //await setDownloadPath(data.DOWNLOAD_PATH)
     console.groupEnd()
   })
   .afterEach(async () => {
-    await checkLocalFile(data.DOWNLOAD_FOLDER_PATH)
-    await deleteLocalFile(data.DOWNLOAD_FOLDER_PATH)
+    //await checkLocalFile(data.DOWNLOAD_FOLDER_PATH)
+    //await deleteLocalFile(data.DOWNLOAD_FOLDER_PATH)
   })
 test(`[Desktop] Drive : Access a folder public link, download the file(s), and check the 'create Cozy' link`, async t => {
   console.group(

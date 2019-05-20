@@ -109,25 +109,25 @@ export async function deleteLocalFile(filepath) {
 //Chrome:headless does not download file in the download Folder by default
 //This function set the path for the download folder
 export async function setDownloadPath(downloadFolderPath) {
-  let port
-  if (SLUG == 'drive') port = 9220
-  if (SLUG == 'photos') port = 9221
-
-  console.info('CDP PORT : ' + port)
-
-  const options = {
-    port: port
-  }
-
-  const client = await CDP(options)
-  const { Network, Page } = client
-
-  await Promise.all([Network.enable(), Page.enable()])
-
-  await Page.setDownloadBehavior({
-    behavior: 'allow',
-    downloadPath: path.resolve(__dirname, downloadFolderPath)
-  })
+  // let port
+  // if (SLUG == 'drive') port = 9220
+  // if (SLUG == 'photos') port = 9221
+  //
+  // console.info('CDP PORT : ' + port)
+  //
+  // const options = {
+  //   port: port
+  // }
+  //
+  // const client = await CDP(options)
+  // const { Network, Page } = client
+  //
+  // await Promise.all([Network.enable(), Page.enable()])
+  //
+  // await Page.setDownloadBehavior({
+  //   behavior: 'allow',
+  //   downloadPath: path.resolve(__dirname, downloadFolderPath)
+  // })
 }
 //Check http status for all img, to be sure everything is loaded before counting images
 export async function checkAllImagesExists() {

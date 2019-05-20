@@ -52,7 +52,7 @@ fixture`Drive : Viewer features (and Download)`
   await t.useRole(driveUser)
   await drivePage.waitForLoading()
   await drivePage.goToFolder(data.FOLDER_DATE_TIME)
-  await setDownloadPath(data.DOWNLOAD_PATH)
+  //await setDownloadPath(data.DOWNLOAD_PATH)
   console.groupEnd()
 })
 
@@ -88,8 +88,8 @@ test('Viewer : checking common features for all files (expect PDF)', async t => 
         t.ctx.fileNameListNoPDF[i]
       }`
     )
-    await checkLocalFile(`${data.DOWNLOAD_PATH}/${t.ctx.fileNameListNoPDF[i]}`)
-    await deleteLocalFile(`${data.DOWNLOAD_PATH}/${t.ctx.fileNameListNoPDF[i]}`)
+    //await checkLocalFile(`${data.DOWNLOAD_PATH}/${t.ctx.fileNameListNoPDF[i]}`)
+    //await deleteLocalFile(`${data.DOWNLOAD_PATH}/${t.ctx.fileNameListNoPDF[i]}`)
   }
 })
 
@@ -120,10 +120,10 @@ test('Viewer : no Viewer : other Download', async t => {
         t.ctx.fileNameListNoViewer[i]
       }`
     )
-    await checkLocalFile(
+    //await checkLocalFile(
       `${data.DOWNLOAD_PATH}/${t.ctx.fileNameListNoViewer[i]}`
     )
-    await deleteLocalFile(
+    //await deleteLocalFile(
       `${data.DOWNLOAD_PATH}/${t.ctx.fileNameListNoViewer[i]}`
     )
   }

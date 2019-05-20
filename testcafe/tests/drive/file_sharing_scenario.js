@@ -69,12 +69,12 @@ fixture`Drive : Access a file public link, download the file, and check the 'cre
       `\n↳ ℹ️  no Loggin (anonymous) & DOWNLOAD_PATH initialization`
     )
     //await t.useRole(Role.anonymous())
-    await setDownloadPath(data.DOWNLOAD_PATH)
+    //await setDownloadPath(data.DOWNLOAD_PATH)
     console.groupEnd()
   })
   .afterEach(async () => {
-    await checkLocalFile(`${data.DOWNLOAD_PATH}/${data.FILE_XLSX}`) //The file is downloaded directly, no zip!
-    await deleteLocalFile(`${data.DOWNLOAD_PATH}/${data.FILE_XLSX}`)
+    //await checkLocalFile(`${data.DOWNLOAD_PATH}/${data.FILE_XLSX}`) //The file is downloaded directly, no zip!
+    //await deleteLocalFile(`${data.DOWNLOAD_PATH}/${data.FILE_XLSX}`)
   })
 test(`[Desktop] Drive : Access a file public link, download the file, and check the 'create Cozy' link`, async t => {
   console.group(
