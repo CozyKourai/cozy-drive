@@ -43,6 +43,17 @@ pipeline {
         '''
       }
     }
+    stage('Testcafé Drive') {
+      steps {
+        sh '''
+          echo "--- SECTION Test Drive ---"
+          export INSTANCE_TESTCAFE="testdrive.cozy.rocks"
+          export COZY_APP_SLUG='drive'
+          yarn testcafe:$COZY_APP_SLUG
+          echo "--- END SECTION ---"
+        '''
+      }
+    }
     stage('Testcafé Photos') {
       steps {
         sh '''
@@ -56,17 +67,7 @@ pipeline {
     }
 
 
-    stage('Testcafé Drive') {
-      steps {
-        sh '''
-          echo "--- SECTION Test Drive ---"
-          export INSTANCE_TESTCAFE="testdrive.cozy.rocks"
-          export COZY_APP_SLUG='drive'
-          yarn testcafe:$COZY_APP_SLUG
-          echo "--- END SECTION ---"
-        '''
-      }
-    }
+
 
 
 
